@@ -22,4 +22,8 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  onCompleteClick() {
+    this.router.navigate([`/view-details/${this.userName}`])
+  }
+
 }

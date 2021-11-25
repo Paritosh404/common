@@ -1,5 +1,20 @@
-<div class="row" style="margin: 10em;">
+<div class="row" style="margin-top: 6em;">
     <div class="col-xs-12" style="text-align: center;">
-        <h3>Welcome {{ userName }}</h3>
+    <h3 class="display-2">Welcome {{ userName }}</h3>
+        <br>
+        <br>
+    <h6 class="display-6"   >You Profile Is Almost Completed ...</h6>
+    <br>
+    <hr>
+    <br>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+            role="progressbar" 
+            aria-valuenow="75" 
+            aria-valuemin="0" 
+            aria-valuemax="100" 
+            style="width: 90%"></div>
+        </div>
+        <button class="btn btn-primary" style="margin-top: 3em;" (click)="onCompleteClick()">Complete Profile</button>
     </div>
 </div>

@@ -1,10 +1,13 @@
 <div class="row">
+
+    <h1 class="display-3" style="text-align: center; margin-top: .5em;">Sign Up</h1>
+
     <div class="col-xs-12">
         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
             <div class="row" 
             style="display: flex;
             align-items: center;
-            justify-content: center; text-align: center; margin: 2em;">
+            justify-content: center; text-align: center; margin: 1.5em;">
                 <div class="col-xl-4">
                     <label for="name">Name</label>
                     <input 
@@ -72,7 +75,7 @@
                 <label for="mobileNo">Mobile No</label>
 
                 <div class="col-xl-12">
-                    <input style="float: left; width: 20%; text-align: right;" 
+                    <input style="float: left; width: 10%; text-align: right; margin-left: 11em;" 
                             formControlName="mobileNoPrefix"
                             class="form-control">
                     <input 
@@ -80,7 +83,7 @@
                     id="mobileNo"
                     formControlName="mobileNo"
                     class="form-control"
-                    style="float: right; width: 60%; margin-right: 12em;">
+                    style=" width: 60%; margin-right: 12em; margin-left: 1em;">
                 </div>
 
             </div>
@@ -117,8 +120,11 @@
                 <button 
                 type="submit" 
                 class="btn btn-success"
-                [disabled]="!signupForm.valid"
+                [disabled]="!(signupForm.valid && cpass.value === pass.value)"
                 >Register</button>
+            </div>
+            <div class="alert alert-danger" *ngIf="!(cpass.value === pass.value)" role="alert">
+                <p style="text-align: center;"> Password Does Not Match!!</p>
             </div>
 
         </form>

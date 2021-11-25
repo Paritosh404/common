@@ -10,7 +10,6 @@ export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
   countries = {'india' : '+91', 'usa': '+01'};
-  cnfPass = false;
 
   constructor() { }
 
@@ -30,10 +29,6 @@ export class SignupComponent implements OnInit {
     })
   }
 
-  passCheck(pass1: string, pass2: string) {
-    console.log(pass1, pass2)
-  }
-
   private initForm() {
 
     let countries = new FormArray([], Validators.required);
@@ -46,8 +41,8 @@ export class SignupComponent implements OnInit {
       'country' : new FormControl(''),
       'mobileNoPrefix' : new FormControl({value: '', disabled: true}),
       'mobileNo' : new FormControl('', Validators.required),
-      'password' : new FormControl('', [Validators.required, Validators.minLength(8)]),
-      'confirmPassword' : new FormControl('', [Validators.required, Validators.minLength(8)]),
+      'password' : new FormControl('', [Validators.required, Validators.minLength(6)]),
+      'confirmPassword' : new FormControl('', [Validators.required, Validators.minLength(6)]),
 
     })
   }
